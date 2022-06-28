@@ -1,0 +1,239 @@
+:root{
+	--main-color:#85ed9f;
+	--main-dark-color:#13712b;
+	--main-light-color:#F9FAFA;
+	--text-color:#F9FAFA;
+	--text-dark-color:#595565;
+	--bg-color:rgb(225, 248, 230);
+}
+#my-body{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Courier New', Courier, monospace;
+	overflow: hidden;
+	color: var(--text-dark-color);
+
+}
+
+.login-container{
+	width: 50%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login-container .image{
+	width: 50%;
+}
+.login-container .image img{
+	width: 100%;
+	height: 100%;
+	
+}
+.login-container .my-card{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding:30px 20px;
+	margin-top: 15%;
+	border-radius: 15px;
+	border:2px solid var(--main-color);
+}
+.my-card .card-title{
+	width: 50%;
+	
+}
+.my-card .card-title h5{
+	font-size: 2em;
+	font-weight: 700;
+	letter-spacing: 2px;
+	border-bottom:5px solid var(--main-color);	
+	margin:0 0 20px 0;
+}
+.my-card .input-user{
+	border-bottom: 2px solid var(--main-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+.my-card .input-user input{
+	border:0;
+	height: 40px;
+	font-size: 1.1em;
+	padding-left: 5px;
+	margin-bottom: 5px;
+	border-collapse: collapse;
+	background-color: rgb(247, 243, 243,0.2);
+}
+.my-card .input-user input:focus{
+	outline: none;
+}
+.my-card .input-submit{
+	width: 100%;
+}
+.my-card .input-submit button{
+	width: 100%;
+	border:  2px solid var(--main-color);
+	background-color: rgb(248, 248, 248,0.3);
+	border-collapse: collapse;
+	padding: 5px 0;
+	font-size: 1.3em;
+	font-weight: 600;
+	letter-spacing: 1.3px;
+	border-radius: 5px;
+}
+.my-card .input-submit button:hover{
+	background-color:var(--main-color);
+	cursor: pointer;
+}
+.register{
+	text-align: center;
+	font-size: 1.3em;
+	text-decoration: none;
+	color: var(--main-dark-color);
+	font-weight: 600;
+}
+.register:hover{
+	color: var(--text-dark-color);
+}
+/* Register styling */
+.register-body{
+	width: 100%;
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url("../images/bglight.png") no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow-x:hidden;
+}
+.container-register{
+	width: 70%;
+	height: 80vh;
+	display: flex;
+	background-color: var(--main-light-color);
+	box-shadow: 0px 1px 1px 2px ;
+}
+.register-form{
+	width: 50%;
+	height: 100%;
+	display:flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 50px;
+}
+.register-form h2{
+	font-size: 2em;
+	font-weight: bold;
+	color: var(--main-color);
+}
+.register-form form{
+	height: 60%;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.reg-input,.buttons{
+	width: 100%;
+	
+}
+.reg-input input{
+	width: 95%;
+	padding-left: 5%;
+	height: 35px;
+	border-radius: 8px;
+	border: 1px solid ;
+	font-size: 1.2em;
+}
+.reg-input input:focus{
+	border: none;
+	outline: 2px solid var(--main-color);
+}
+.reg-input-check input{
+	cursor: pointer;
+}
+.reg-input-check label{
+	font-size: 1.1em;
+	
+}
+.reg-input-check label span{
+	color: var(--main-color);
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.buttons{
+	display: flex;
+	justify-content:space-between;
+}
+
+.buttons input,.buttons a{
+	width: 45%;
+	height: 35px;
+	border-radius: 8px;
+	border: 1px solid ;
+	background-color: var(--main-light-color);
+	border: 2px solid var(--main-color);
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--main-color);
+	cursor: pointer;
+}
+.buttons input{
+	height: 40px;
+}
+.buttons a button{
+	width: 100%;
+	height: 100%;
+	background-color: var(--main-light-color);
+	border-radius: 8px;
+	border: none;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: var(--main-color);
+	cursor: pointer;
+	background-color: var(--main-light-color);
+}
+.buttons input:hover,.buttons a button:hover{
+	background-color: var(--main-color);
+	color: var(--text-dark-color);
+}
+.register-image {
+	width:50%;
+	height: 100%;
+}
+.register-image img{
+	width: 100%;
+	height: 100%;
+}
+.div-input{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-left:100px;
+}
+.div-input span{
+	font-size: 1.2rem;
+}
+.div-input label{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.div-input label i{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.div-input label input{
+    display: none;
+}
+.ajouter-image{
+    width: 40%;
+    height: 100%;
+}
