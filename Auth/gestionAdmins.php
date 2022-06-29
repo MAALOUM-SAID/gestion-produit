@@ -20,15 +20,6 @@
                 ]
             );
         }
-        public static function modifier_admin($pdo,$id,$username,$password,$email,$image_path){
-            $sql="UPDATE login SET username=:username,password=:password WHERE id=:id;";
-            $stmt=$pdo -> prepare($sql);
-            $stmt -> execute([
-                ':id' => $id,
-                ":username" => $username,
-                ":passwrd" => sha1($password)
-            ]);
-        }
         public static function afficher_admins($pdo){
             $sql="SELECT * FROM login;";
             $result=$pdo -> query($sql);

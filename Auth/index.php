@@ -54,5 +54,6 @@
     </main>
   </div>
 </div>
+<?php require_once '../template/footer.php'?>
   </body>
 </html>

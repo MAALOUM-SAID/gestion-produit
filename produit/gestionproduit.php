@@ -1,4 +1,5 @@
 <?php
+    require_once '../Auth/auth.php';
     class Produit{
         private $pdo;
         private $id;

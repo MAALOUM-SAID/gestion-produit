@@ -1,3 +1,6 @@
+<?php 
+require_once '../Auth/auth.php';
+?>
 <div class="nav-dashboard">
                 <div class="title">
                     <h2><?=isset($_GET['title'])?$_GET['title']:"Profile"?></h2>

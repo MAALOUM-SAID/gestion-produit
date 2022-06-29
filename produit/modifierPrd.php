@@ -52,7 +52,7 @@
                             $produit=new Produit($pdo,id:$id,designation:$designation,prix_unitaire:$prix_unitaire,qte_stock:$qte_stock,id_cat:$id_cat,image_path:$image_path);
                         }
                         $produit->modifier_produit();
-                        header("refresh:0;url=index.php");
+                        header("refresh:0;url=index.php?title=Les Produits");
                     } catch (PDOException $err) {
                         $msg_err=$err->getMessage();
                     }

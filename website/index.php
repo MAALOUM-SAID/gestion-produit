@@ -1,4 +1,5 @@
 <?php
+require_once '../Auth/auth.php';
 require_once '../categorie/gestionCategorie.php';
 require_once '../produit/gestionproduit.php';
 require_once '../connection.php';

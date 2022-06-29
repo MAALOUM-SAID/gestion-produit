@@ -17,3 +17,10 @@ const setTheme = ()=>{
         
     }
 }
+
+function confirmer(event) {
+    let ok=confirm("Voulez Vous Supprimer ce Produit");
+    if (!ok) {
+    event.preventDefault();
+    }
+}

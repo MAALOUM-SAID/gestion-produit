@@ -33,7 +33,7 @@
                 $categorie=new Categorie(pdo:$pdo,id:$id,nom_cat:$nom_cat,description_cat:$description);
                 $categorie->modifier_categorie();
                 $pdo=null;
-                header("refresh:0;url=index.php");
+                header("refresh:0;url=index.php?title=Les Categories");
             } catch (PDOException $err) {
                     $msg=$err->getMessage();
             }

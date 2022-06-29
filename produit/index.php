@@ -97,14 +97,6 @@
                     <?php }?>
                   </tbody>
   </table>
-  <script>
-    function confirmer(event) {
-      let ok=confirm("Voulez Vous Supprimer ce Produit");
-      if (!ok) {
-        event.preventDefault();
-      }
-    }
-  </script>
 </div>
             <div class="btn-ajouter">
                 <a href="../produit/ajouterPrd.php">
@@ -114,8 +106,8 @@
             </div>
         </div>
     </div>
-    <footer>
-        All Copyright Reserver @2022
-    </footer>
+    <?php require_once '../template/footer.php'?>
+  
+
 </body>
 </html>

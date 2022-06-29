@@ -26,6 +26,12 @@ body{
     background-size: cover;
     background-attachment: scroll;
     min-height: 100vh;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 #main-body{
     width: 100%;
@@ -85,11 +91,13 @@ header .nav-top nav ul li{
 header .nav-top nav ul li i{
     font-size: 1.1em;
     margin-right: 5px;
+    color:rgb(255, 253, 253);
 }
 header .nav-top nav ul li a{
     color: var(--text-color);
     font-size: 1.3em;
     font-weight: 500;
+    text-transform: capitalize;
 }
 header .logout-btn a i{
     margin-bottom: 30px;
@@ -101,7 +109,7 @@ header .logout-btn a i{
     color: var(--text-color);
 }
 header .logout-btn a i:hover{
-    color: var(--text-color);
+    color: var(--main-light-color);
 }
 .dashboard{
     padding: 20px 0;

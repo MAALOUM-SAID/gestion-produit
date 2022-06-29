@@ -5,9 +5,6 @@
     require_once '..\utile.php';
     require_once '..\connection.php';
     require_once '..\categorie\gestionCategorie.php';
-    if (!isset($_SESSION["username"])) {
-        header('refresh:0;url=../Auth/logout.php');
-    }
     $pdo=Connection::connectToDB("gestionproduit");
     $categorie=new Categorie(pdo:$pdo);
     // order categories
@@ -71,7 +68,7 @@
                       </td>
                   <?php }?>
                   <td class="text-center">
-                    <a href="supprimerCat.php?id=<?=$value['id']?>" onclick="confirmer()"><i class="fa-solid fa-trash" id="supprimer"></i></a>
+                    <a href="supprimerCat.php?id=<?=$value['id']?>" onclick="confirmer(event)"><i class="fa-solid fa-trash" id="supprimer"></i></a>
                   </td>
                   <?php $query=http_build_query($value);?>
                   <td class="text-center">
@@ -90,8 +87,6 @@
             </div>
         </div>
     </div>
-    <footer>
-        All Copyright Reserver @2022
-    </footer>
+    <?php require_once '../template/footer.php'?>
 </body>
 </html>

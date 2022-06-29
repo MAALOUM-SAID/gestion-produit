@@ -3,7 +3,7 @@ class Connection{
     static function connectToDB($dbname){
         $dsn="mysql:host=localhost;port=3306;dbname=$dbname";
         $user="root";
-        $passwd="SAID12";
+        $passwd="SAID";
         $options=[
             PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
         ];

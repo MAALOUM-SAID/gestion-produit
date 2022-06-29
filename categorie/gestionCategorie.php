@@ -1,4 +1,5 @@
 <?php
+    require_once '../Auth/auth.php';
 class Categorie{
     private $pdo;
     private $id;

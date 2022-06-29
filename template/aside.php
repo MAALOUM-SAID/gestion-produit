@@ -1,3 +1,6 @@
+<?php 
+require_once '../Auth/auth.php';
+?>
 <header>
             <div class="nav-top">
                 <div class="title">
