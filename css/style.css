@@ -248,6 +248,14 @@ table ,thead,td{
     height: 100%;
     border-radius: 100%;
 }
+.image-profile form button{
+    float: right;
+    transform: translateY(-25px);
+    font-size: 1.3em;
+    cursor: pointer;
+    border: none;
+    background-color: var(--main-light-color) 0.5;
+}
 .personal-info{
     display: flex;
     flex-direction: column;

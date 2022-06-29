@@ -26,10 +26,18 @@
             <div class="admin-info">
               <div class="about-admin">
                 <div class="image-profile">
-                  <img src="<?=
-                  Admin::recherche_image_admin_username(Connection::connectToDB("gestionproduit")
-                  ,$_SESSION["username"])->profile_img;
-                  ?>" alt="profil image">
+                  <?php
+                    $image_prf=Admin::recherche_image_admin_username(Connection::connectToDB("gestionproduit")
+                    ,$_SESSION["username"])->profile_img;
+                  ?>
+                  <img src="<?=$image_prf?>" alt="profil image">
+                  <form action="../Auth/change_profile_image.php" method="GET">
+                      <input type="text" value="<?=$image_prf?>" name="change" style="display:none">
+                      <input type="text" value="<?=$_SESSION['username']?>" name="username" style="display:none">
+                    <button >
+                    <i class="fa-solid fa-camera"></i>
+                    </button>
+                  </form>
                 </div>
                 <div class="personal-info">
                   <h5><?= Admin::recherche_admin_username(Connection::connectToDB("gestionproduit")

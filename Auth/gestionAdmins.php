@@ -57,7 +57,13 @@
             ]);
             return $stmt -> fetch(PDO::FETCH_OBJ);
         }
-
-
+        public static function change_profile_image($pdo,$image_path,$username){
+            $sql="UPDATE login SET profile_img=:img WHERE username=:username";
+            $stmt=$pdo -> prepare($sql);
+            $stmt -> execute([
+                ":username" => $username,
+                ":img" => $image_path
+            ]);
+        }
     }
 ?>
