@@ -256,6 +256,15 @@ table ,thead,td{
     border: none;
     background-color: var(--main-light-color) 0.5;
 }
+#label-change{
+    float: right;
+    transform: translateY(-25px);
+    margin-right: 8px;
+    cursor: pointer;
+}
+#label-change i{
+    color: #13712b;
+}
 .personal-info{
     display: flex;
     flex-direction: column;

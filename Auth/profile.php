@@ -14,6 +14,30 @@
     $nbr_produits=$produit -> count_les_produits($admin_id -> id)['nbr'];
     $nbr_categories=$categorie -> count_les_categories($admin_id -> id)[0]['nbr'];
     $pdo=null;
+    $image_prf=Admin::recherche_image_admin_username(Connection::connectToDB("gestionproduit")
+    ,$_SESSION["username"])->profile_img;
+    // here is the change
+    $done=false;
+    $username=$_SESSION['username'];
+        if ($_SERVER["REQUEST_METHOD"]==="POST") {
+            $image=$_FILES["image_prf"];
+            if ($image["size"]>0) {
+                move_uploaded_file(
+                    $image['tmp_name'],
+                    "../uploads/profile/" . $image["name"]
+                );
+                $image_path="../uploads/profile/".$image["name"];
+                // change image from database
+                $pdo=Connection::connectToDB("gestionproduit");
+                Admin::change_profile_image($pdo,$image_path,$username);
+                $done=true;
+        }
+    }
+    if ($done) {
+     
+        unlink($image_prf);
+        header("Location:../Auth/profile.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +50,13 @@
             <div class="admin-info">
               <div class="about-admin">
                 <div class="image-profile">
-                  <?php
-                    $image_prf=Admin::recherche_image_admin_username(Connection::connectToDB("gestionproduit")
-                    ,$_SESSION["username"])->profile_img;
-                  ?>
                   <img src="<?=$image_prf?>" alt="profil image">
-                  <form action="../Auth/change_profile_image.php" method="GET">
-                      <input type="text" value="<?=$image_prf?>" name="change" style="display:none">
-                      <input type="text" value="<?=$_SESSION['username']?>" name="username" style="display:none">
-                    <button >
+                  <form action="" method="POST" enctype="multipart/form-data">
+                  <label for="img-inp" id="label-change">
                     <i class="fa-solid fa-camera"></i>
-                    </button>
+                    <input type="file" name="image_prf" id="img-inp" style="display:none;"> 
+                  </label>  
+                    <input type="submit" id="btn-submit" style="display:none;">
                   </form>
                 </div>
                 <div class="personal-info">
@@ -92,5 +112,13 @@
     <footer>
         All Copyright Reserver @2022
     </footer>
+    <script>
+        document.forms[0].firstElementChild.onchange=function (event) {
+            if (event.target) {
+                
+                document.getElementById("btn-submit").form.submit();
+            }
+        }
+    </script>
 </body>
 </html>
